@@ -215,15 +215,17 @@ class SelectableGroup extends Component {
 		console.log({
 			currentItems,
 			registry: this._registry,
-			itemDataDomNode: itemData.domNode,
-			_selectbox,
-			doObjectsCollide: doObjectsCollide(_selectbox, itemData.domNode, tolerance),
-			currentItemsIncludes: !currentItems.includes(itemData.key)
+			_selectbox
 		})
 
 		if (!_selectbox) return;
 
 		this._registry.forEach(itemData => {
+			console.log({
+				itemDataDomNode: itemData.domNode,
+				doObjectsCollide: doObjectsCollide(_selectbox, itemData.domNode, tolerance),
+				currentItemsIncludes: !currentItems.includes(itemData.key)
+			});
 			if (
 				itemData.domNode
 				&& doObjectsCollide(_selectbox, itemData.domNode, tolerance)
