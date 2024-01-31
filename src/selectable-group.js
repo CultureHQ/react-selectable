@@ -222,11 +222,11 @@ class SelectableGroup extends Component {
 		if (!_selectbox) return;
 
 		this._registry.forEach(itemData => {
-			console.log({
-				itemDataDomNode: itemData.domNode,
-				doObjectsCollide: doObjectsCollide(_selectbox, itemData.domNode, tolerance),
-				currentItemsIncludes: !currentItems.includes(itemData.key)
-			});
+			// console.log({
+			// 	itemDataDomNode: itemData.domNode,
+			// 	doObjectsCollide: doObjectsCollide(_selectbox, itemData.domNode, tolerance),
+			// 	currentItemsIncludes: !currentItems.includes(itemData.key)
+			// });
 			if (
 				itemData.domNode
 				&& doObjectsCollide(_selectbox, itemData.domNode, tolerance)
