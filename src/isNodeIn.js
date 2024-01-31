@@ -4,12 +4,12 @@ const isNodeIn = (node, predicate) => {
   }
   
   let currentNode = node;
-  while (currentNode) {
-    if (predicate(currentNode)) {
-      return true;
-    }
-    currentNode = currentNode.parentNode;
+  if (predicate(currentNode)) {
+    return true;
   }
+  // while (currentNode) {
+  //   currentNode = currentNode.parentNode;
+  // }
 
   return false;
 };
