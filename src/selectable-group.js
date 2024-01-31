@@ -212,6 +212,15 @@ class SelectableGroup extends Component {
 		const currentItems = [];
 		const _selectbox = findDOMNode(this.refs.selectbox);
 
+		console.log({
+			currentItems,
+			registry: this._registry,
+			itemDataDomNode: itemData.domNode,
+			_selectbox,
+			doObjectsCollide: doObjectsCollide(_selectbox, itemData.domNode, tolerance),
+			currentItemsIncludes: !currentItems.includes(itemData.key)
+		})
+
 		if (!_selectbox) return;
 
 		this._registry.forEach(itemData => {
