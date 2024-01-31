@@ -134,6 +134,7 @@ class SelectableGroup extends Component {
 		const node = findDOMNode(this);
 		let collides, offsetData;
 		window.addEventListener('mouseup', this._mouseUp);
+		console.log({eventTarget: e.target, node})
 
 		// Right clicks
 		if (e.which === 3 || e.button === 2) return;
@@ -232,6 +233,7 @@ class SelectableGroup extends Component {
 				&& !currentItems.includes(itemData.key)
 			) {
 				currentItems.push(itemData.key);
+				console.log({currentItems})
 			}
 		});
 

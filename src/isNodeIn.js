@@ -8,7 +8,7 @@ const isNodeIn = (node, predicate) => {
     if (predicate(currentNode)) {
       return true;
     }
-    currentNode = currentNode.parentNode;
+    // currentNode = currentNode.parentNode;
   }
 
   return false;
