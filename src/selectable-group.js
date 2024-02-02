@@ -211,7 +211,6 @@ class SelectableGroup extends Component {
 
 		const currentItems = [];
 		const _selectbox = findDOMNode(this.refs.selectbox);
-		console.log(this._registry)
 
 		if (!_selectbox) return;
 
