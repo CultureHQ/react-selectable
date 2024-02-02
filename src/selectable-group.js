@@ -134,7 +134,6 @@ class SelectableGroup extends Component {
 		const node = findDOMNode(this);
 		let collides, offsetData;
 		window.addEventListener('mouseup', this._mouseUp);
-		console.log({eventTarget: e.target, node})
 
 		// Right clicks
 		if (e.which === 3 || e.button === 2) return;
@@ -213,27 +212,15 @@ class SelectableGroup extends Component {
 		const currentItems = [];
 		const _selectbox = findDOMNode(this.refs.selectbox);
 
-		console.log({
-			currentItems,
-			registry: this._registry,
-			_selectbox
-		})
-
 		if (!_selectbox) return;
 
 		this._registry.forEach(itemData => {
-			// console.log({
-			// 	itemDataDomNode: itemData.domNode,
-			// 	doObjectsCollide: doObjectsCollide(_selectbox, itemData.domNode, tolerance),
-			// 	currentItemsIncludes: !currentItems.includes(itemData.key)
-			// });
 			if (
 				itemData.domNode
 				&& doObjectsCollide(_selectbox, itemData.domNode, tolerance)
 				&& !currentItems.includes(itemData.key)
 			) {
 				currentItems.push(itemData.key);
-				console.log({currentItems})
 			}
 		});
 
@@ -253,14 +240,6 @@ class SelectableGroup extends Component {
 		const {children, enabled, fixedPosition, className, selectingClassName} = this.props;
 		const {isBoxSelecting, boxLeft, boxTop, boxWidth, boxHeight} = this.state;
 		const Component = this.props.component;
-
-		// if (!enabled) {
-		// 	return (
-		// 		<Component className={className}>
-		// 			{children}
-		// 		</Component>
-		// 	);
-		// }
 
 		const boxStyle = {
 			left: boxLeft,
