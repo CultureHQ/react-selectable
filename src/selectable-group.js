@@ -214,15 +214,7 @@ class SelectableGroup extends Component {
 
 		if (!_selectbox) return;
 
-		console.log(this._registry)
-
 		this._registry.forEach(itemData => {
-			console.log({
-				itemDataDomNode: itemData.domNode,
-				selectbox: _selectbox,
-				htmlElement: itemData.domNode instanceof HTMLElement,
-				collide: doObjectsCollide(_selectbox, itemData.domNode, tolerance)
-			})
 			if (
 				itemData.domNode
 				&& doObjectsCollide(_selectbox, itemData.domNode, tolerance)
