@@ -37,8 +37,6 @@ const coordsCollide = (aTop, aLeft, bTop, bLeft, aWidth, aHeight, bWidth, bHeigh
 export default (a, b, tolerance = 0) => {
 	const aObj = (a instanceof HTMLElement) ? getBoundsForNode(a) : a;
 	const bObj = (b instanceof HTMLElement) ? getBoundsForNode(b) : b;
-	console.log(b.top, b.left, b.offsetWidth, b.offsetHeight)
-	console.log(bObj)
 
 	return coordsCollide(
 		aObj.top,
