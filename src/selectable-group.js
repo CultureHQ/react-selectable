@@ -214,6 +214,8 @@ class SelectableGroup extends Component {
 
 		if (!_selectbox) return;
 
+		console.log(this._registry)
+
 		this._registry.forEach(itemData => {
 			if (
 				itemData.domNode
