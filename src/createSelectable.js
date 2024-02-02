@@ -16,7 +16,7 @@ const createSelectable = (WrappedComponent) => {
 
 
 		render () {
-          return <div id={"selectableItem-"+this.props.selectableKey}>
+          return <div id={"selectableItem-"+this.props.selectableKey} style={this.props.style}>
             <WrappedComponent {...this.props}>
               {this.props.children}
             </WrappedComponent>
@@ -30,7 +30,8 @@ const createSelectable = (WrappedComponent) => {
 
 	SelectableItem.propTypes = {
 		children: PropTypes.node,
-		selectableKey: PropTypes.any.isRequired
+		selectableKey: PropTypes.any.isRequired,
+		style: PropTypes.object
 	};
 
 	return SelectableItem;
