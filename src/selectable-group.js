@@ -254,13 +254,13 @@ class SelectableGroup extends Component {
 		const {isBoxSelecting, boxLeft, boxTop, boxWidth, boxHeight} = this.state;
 		const Component = this.props.component;
 
-		if (!enabled) {
-			return (
-				<Component className={className}>
-					{children}
-				</Component>
-			);
-		}
+		// if (!enabled) {
+		// 	return (
+		// 		<Component className={className}>
+		// 			{children}
+		// 		</Component>
+		// 	);
+		// }
 
 		const boxStyle = {
 			left: boxLeft,
@@ -294,7 +294,7 @@ class SelectableGroup extends Component {
 				style={wrapperStyle}
 			>
 				{
-					isBoxSelecting ?
+					isBoxSelecting && enabled ?
 						<div
 							style={boxStyle}
 							ref="selectbox"
